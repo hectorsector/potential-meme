@@ -1,0 +1,19 @@
+name: Check Markdown links
+
+on: push
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    if: github.repository == 'hectorsector/improved-octo-tribble'
+    steps:
+      - uses: actions/checkout@master
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+
+  failed-link-check:
+    runs-on: ubuntu-latest
+    if: github.repository == 'mattdavis0351/improved-octo-tribble'
+    steps:
+      - uses: actions/checkout@master
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+ 
